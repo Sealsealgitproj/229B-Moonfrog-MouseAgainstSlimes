@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
     float move;
 
     public float jumpforce;
+    public bool isJumping;
     
     Rigidbody2D rb2d;
     
@@ -18,7 +19,7 @@ public class Movement : MonoBehaviour
         move = Input.GetAxis("Horizontal");
         rb2d.linearVelocity = new Vector2(move * speed, rb2d.linearVelocity.y);
         
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
         {
             rb2d.AddForce(new Vector2(rb2d.linearVelocity.x, jumpforce));
             Debug.Log("Jump"); 
